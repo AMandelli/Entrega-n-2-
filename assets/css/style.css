@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    background-color: black !important;
+}
+.navbar-brand{
+    color: white;
+}
+body{
+    background-color:gray;
+}
+.tarjeta{
+    width: 250px;
+    border: solid 2px;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgb(197, 195, 195);
+}
+.tarjeta > img{
+    width: 250px;
+    height: 160px;
+}
+.tarjeta > button{
+    border: solid 1px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    padding: 4px;
+}
+footer{
+    background-color: black;
+    color: white;
+}
+.loading{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.507);
+    z-index: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading > i{
+    color: white;
+    font-size: 64px;
+    animation-name: rotar;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+}
+@keyframes rotar {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+/* Contacto */
+
+.formulario{
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.685);
+    max-width: 900px;
+    margin: 10px auto;
+    border-radius: 10px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 60px;
+    grid-template-areas: "titulo    titulo"
+                         "NomApell  email"
+                         "tel       asunto"
+                         "mensaje   mensaje"
+                         "btn       btn";
+}
+
+@media(max-width:576px){
+    .formulario{
+        border-radius: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 60px;
+        grid-template-areas: "titulo"
+                             "NomApell"  
+                             "email"
+                             "tel"       
+                             "asunto"
+                             "mensaje"
+                             "btn";
+    }
+}
+.formulario h2:nth-child(1){
+    grid-area: titulo;
+    color: white;
+    font-size: 30px;
+}
+.formulario label:nth-child(2){
+    grid-area: NomApell;
+}
+.formulario label:nth-child(3){
+    grid-area: email;
+}
+.formulario label:nth-child(4){
+    grid-area: tel;
+}
+.formulario label:nth-child(5){
+    grid-area: asunto;
+}
+.formulario label:nth-child(6){
+    grid-area: mensaje;
+}
+.formulario button:nth-child(7){
+    grid-area: btn;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formulario label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+.formulario label input,.formulario textarea{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+}
+
+.formulario > label > textarea{
+    height: 70px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.formulario label input{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* nosotros */
+
+.cajapadre{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.cajahijo1{
+    margin: 10px;
+}
+.cajahijo2{
+    margin: 10px;
+}
+.cajahijo3 > img{
+    width: 100%;
+}
+.cajahijo4{
+    margin: 10px;
+}
+.cajahijo5 > img{
+    width: 100%;
+}
+.cajahijo6{
+    margin: 10px;
+}
+
+@media(min-width:768px){
+    .cajapadre{
+        flex-direction: row;
+        align-items: center
+    }
+    .cajahijo3{
+        width: 45%;
+        padding: 10px;
+    }
+    .cajahijo3 > img {
+        width: 100%;
+    }
+    .cajahijo4{
+        width: 45%;
+        padding: 10px;
+    }
+    .cajahijo5{
+        width: 45%;
+        padding: 10px;
+    }
+    .cajahijo5 > img{
+        width: 100%;
+    }
+    .cajahijo6{
+        width: 45%;
+        padding: 10px;
+    }
+}
